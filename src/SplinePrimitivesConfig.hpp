@@ -1,6 +1,6 @@
 #include <base/Eigen.hpp>
 #pragma once
-namespace motion_planning_libraries 
+namespace sbpl_spline_primitives 
 {
 struct SplinePrimitivesConfig 
 {

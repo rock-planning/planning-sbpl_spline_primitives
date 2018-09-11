@@ -3,7 +3,7 @@
 #include <set>
 
 using namespace base::geometry;
-namespace motion_planning_libraries 
+namespace sbpl_spline_primitives 
 {
 
 SbplSplineMotionPrimitives::SbplSplineMotionPrimitives() {}

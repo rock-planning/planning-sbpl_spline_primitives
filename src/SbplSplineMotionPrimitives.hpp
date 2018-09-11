@@ -5,7 +5,7 @@
 #include <set>
 #include "SplinePrimitivesConfig.hpp"
 
-namespace motion_planning_libraries 
+namespace sbpl_spline_primitives 
 {
 
 
