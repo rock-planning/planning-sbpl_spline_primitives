@@ -1,6 +1,6 @@
 rock_vizkit_plugin(sbpl_spline_primitives-viz
-    Test.cpp
+    MotionPlanningLibrariesSbplSplineVisualization.cpp
     DEPS sbpl_spline_primitives
-    MOC Test.hpp
-    HEADERS Test.hpp)
+    MOC MotionPlanningLibrariesSbplSplineVisualization.hpp
+    HEADERS MotionPlanningLibrariesSbplSplineVisualization.hpp)
 

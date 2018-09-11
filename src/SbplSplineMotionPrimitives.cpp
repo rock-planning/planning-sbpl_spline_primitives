@@ -32,8 +32,6 @@ std::vector<Eigen::Vector2i> SbplSplineMotionPrimitives::generateDestinationCell
         int x = r;
         int y = 0;
         int err = 0;
-
-        std::cout << "R: " << r << std::endl;
         
         while (x >= y)
         {

@@ -1,14 +1,14 @@
 #include <boost/test/unit_test.hpp>
 #define private public //need to be able to test private members 
 #define protected public
-#include <motion_planning_libraries/sbpl/SbplSplineMotionPrimitives.hpp>
+#include <sbpl_spline_primitives/SbplSplineMotionPrimitives.hpp>
 #include <iostream>
 #include <fstream>
 #include <map>
 #include <set>
 
 
-using namespace motion_planning_libraries;
+using namespace sbpl_spline_primitives;
 using namespace std;
 
 #define VECTOR_CONTAINS(vec, item) \
@@ -46,7 +46,7 @@ BOOST_AUTO_TEST_CASE(generate_end_angles)
     for(int i = 0; i < config.numAngles; ++i)
     {
         vector<int> endAngles = prims.generateEndAngles(i, config);
-        BOOST_CHECK(endAngles.size() <= config.numEndAngles);
+        BOOST_CHECK(endAngles.size() <= (size_t)config.numEndAngles);
         
         set<int> angleSet;
         for(int angle : endAngles)
