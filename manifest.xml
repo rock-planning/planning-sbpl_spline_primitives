@@ -1,12 +1,13 @@
 <package>
   <description brief="custom motion primitives for sbpl">
-  
+
   </description>
-  <author>/</author>
+  <author>Arne Böckmann arne.boeckmann@dfki.de</author>
   <license></license>
   <url>http://</url>
   <logo>http://</logo>
   <depend package="base/cmake" />
+  <depend package="base/types" />
   <!--
    To add any dependencies use the depend tag
   <depend package="dummy-dependency-0" />
