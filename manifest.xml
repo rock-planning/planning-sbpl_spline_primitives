@@ -1,18 +1,31 @@
 <package>
   <description brief="custom motion primitives for sbpl">
-
   </description>
-  <author>Arne Böckmann arne.boeckmann@dfki.de</author>
-  <license></license>
-  <url>http://</url>
-  <logo>http://</logo>
+  <author>Arne Böckmann/arne.boeckmann@dfki.de</author>
+  <maintainer>Arne Böckmann/arne.boeckmann@dfki.de</maintainer>
+  <license>not yet</license>
+  <url></url>
+  <logo></logo>
   <depend package="base/cmake" />
   <depend package="base/types" />
-  <!--
-   To add any dependencies use the depend tag
-  <depend package="dummy-dependency-0" />
-	...
-  <depend package="dummy-dependency-n-1" />
-  <depend package="dummy-dependency-n" />
-  -->
+  
+  <keywords>
+    <keyword>planning</keyword> <!--kw1 currently used as Category in Software Catalog -->
+    <keyword>sbpl</keyword>
+    <keyword>motion primitives</keyword>
+  </keywords>
+
+  <stage>0</stage>
+  
+    <classifiers> <!--optional -->
+    <!-- The idea of "classifiers" is to provide additional meta data about the software,
+         for example, which programming language has been used, what is the target platform,
+         is it compatible with any robotic middleware. The idea is similar to classifiers
+         in the Python package index (https://packaging.python.org/tutorials/distributing-packages/#classifiers)
+         but we don't have a predefined list of allowed classifiers. -->
+    <classifier>c++</classifier>
+    <classifier>rock</classifier>
+    <classifier>ubuntu</classifier>
+  </classifiers>
+  
 </package>
