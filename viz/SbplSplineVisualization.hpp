@@ -1,5 +1,5 @@
-#ifndef motion_planning_libraries_MotionPlanningLibrariesSbplSplineVisualization_H
-#define motion_planning_libraries_MotionPlanningLibrariesSbplSplineVisualization_H
+#ifndef sbpl_spline_primitives_MotionPlanningLibrariesSbplSplineVisualization_H
+#define sbpl_spline_primitives_MotionPlanningLibrariesSbplSplineVisualization_H
 
 #include <boost/noncopyable.hpp>
 #include <vizkit3d/Vizkit3DPlugin.hpp>
