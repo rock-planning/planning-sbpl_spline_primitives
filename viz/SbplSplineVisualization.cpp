@@ -1,4 +1,4 @@
-#include "MotionPlanningLibrariesSbplSplineVisualization.hpp"
+#include "SbplSplineVisualization.hpp"
 
 #include <iostream>
 
@@ -9,7 +9,7 @@
 using namespace vizkit3d;
 using namespace sbpl_spline_primitives;
 
-struct MotionPlanningLibrariesSbplSplineVisualization::Data {
+struct SbplSplineVisualization::Data {
     // Copy of the value given to updateDataIntern.
     //
     // Making a copy is required because of how OSG works
@@ -17,22 +17,22 @@ struct MotionPlanningLibrariesSbplSplineVisualization::Data {
 };
 
 // PUBLIC
-MotionPlanningLibrariesSbplSplineVisualization::MotionPlanningLibrariesSbplSplineVisualization()
+SbplSplineVisualization::SbplSplineVisualization()
     : mAngleNum(0), mEndAngle(0), p(new Data)
 {
 }
 
-MotionPlanningLibrariesSbplSplineVisualization::~MotionPlanningLibrariesSbplSplineVisualization()
+SbplSplineVisualization::~SbplSplineVisualization()
 {
     delete p;
 }
 
 // PUBLIC SLOTS
-int MotionPlanningLibrariesSbplSplineVisualization::getAngleNum() const {
+int SbplSplineVisualization::getAngleNum() const {
     return mAngleNum;
 }
 
-void MotionPlanningLibrariesSbplSplineVisualization::setAngleNum(int num) {
+void SbplSplineVisualization::setAngleNum(int num) {
     
     num %= p->data.getConfig().numAngles;
     if(num < 0)
@@ -47,12 +47,12 @@ void MotionPlanningLibrariesSbplSplineVisualization::setAngleNum(int num) {
     setDirty();
 }
 
-int MotionPlanningLibrariesSbplSplineVisualization::getEndAngle() const
+int SbplSplineVisualization::getEndAngle() const
 {
     return mEndAngle;
 }
 
-void MotionPlanningLibrariesSbplSplineVisualization::setEndAngle(int num)
+void SbplSplineVisualization::setEndAngle(int num)
 {
     num %= p->data.getConfig().numAngles;
     if(num < 0)
@@ -65,22 +65,22 @@ void MotionPlanningLibrariesSbplSplineVisualization::setEndAngle(int num)
 }
 
 
-bool MotionPlanningLibrariesSbplSplineVisualization::allAnglesShown() const {
+bool SbplSplineVisualization::allAnglesShown() const {
     return mAllAnglesShown;
 }
 
-void MotionPlanningLibrariesSbplSplineVisualization::setShowAllAngles(bool enabled) {
+void SbplSplineVisualization::setShowAllAngles(bool enabled) {
     mAllAnglesShown = enabled;
     emit propertyChanged("show_all_angles");
     setDirty();
 }
 
-double MotionPlanningLibrariesSbplSplineVisualization::getMaxCurvature() const
+double SbplSplineVisualization::getMaxCurvature() const
 {
     return maxCurvature;
 }
 
-void MotionPlanningLibrariesSbplSplineVisualization::setMaxCurvature(const double value)
+void SbplSplineVisualization::setMaxCurvature(const double value)
 {
     maxCurvature = value;
     setDirty();
@@ -89,12 +89,12 @@ void MotionPlanningLibrariesSbplSplineVisualization::setMaxCurvature(const doubl
 
 
 
-osg::ref_ptr<osg::Node> MotionPlanningLibrariesSbplSplineVisualization::createMainNode()
+osg::ref_ptr<osg::Node> SbplSplineVisualization::createMainNode()
 {
     return new osg::Group();
 }
 
-void MotionPlanningLibrariesSbplSplineVisualization::updateMainNode ( osg::Node* node )
+void SbplSplineVisualization::updateMainNode ( osg::Node* node )
 {
     osg::Group* group = node->asGroup();
     group->removeChildren(0, node->asGroup()->getNumChildren());
@@ -102,12 +102,12 @@ void MotionPlanningLibrariesSbplSplineVisualization::updateMainNode ( osg::Node*
     addPrimitives(group, p->data);
 }
 
-void MotionPlanningLibrariesSbplSplineVisualization::updateDataIntern(SbplSplineMotionPrimitives const& data)
+void SbplSplineVisualization::updateDataIntern(SbplSplineMotionPrimitives const& data)
 {
     p->data = data;
 }
 
-void MotionPlanningLibrariesSbplSplineVisualization::addPrimitives(osg::Group* group, 
+void SbplSplineVisualization::addPrimitives(osg::Group* group, 
         SbplSplineMotionPrimitives& primitives) {
         
   const std::vector<SplinePrimitive>& prims = primitives.getPrimitiveForAngle(mAngleNum);
