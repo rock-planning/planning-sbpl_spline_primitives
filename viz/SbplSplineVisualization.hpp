@@ -1,5 +1,5 @@
-#ifndef motion_planning_libraries_MotionPlanningLibrariesSbplSplineVisualization_H
-#define motion_planning_libraries_MotionPlanningLibrariesSbplSplineVisualization_H
+#ifndef sbpl_spline_primitives_MotionPlanningLibrariesSbplSplineVisualization_H
+#define sbpl_spline_primitives_MotionPlanningLibrariesSbplSplineVisualization_H
 
 #include <boost/noncopyable.hpp>
 #include <vizkit3d/Vizkit3DPlugin.hpp>
@@ -9,7 +9,7 @@
 
 namespace vizkit3d
 {
-    class MotionPlanningLibrariesSbplSplineVisualization
+    class SbplSplineVisualization
         : public vizkit3d::Vizkit3DPlugin< sbpl_spline_primitives::SbplSplineMotionPrimitives>
         , boost::noncopyable
     {
@@ -20,8 +20,8 @@ namespace vizkit3d
     Q_PROPERTY(double maxCurvature READ getMaxCurvature WRITE setMaxCurvature)
     
     public:
-        MotionPlanningLibrariesSbplSplineVisualization();
-        ~MotionPlanningLibrariesSbplSplineVisualization();
+        SbplSplineVisualization();
+        ~SbplSplineVisualization();
 
     Q_INVOKABLE void updateData(sbpl_spline_primitives::SbplSplineMotionPrimitives const &data)
     {
