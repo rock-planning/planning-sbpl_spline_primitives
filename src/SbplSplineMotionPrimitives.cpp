@@ -162,16 +162,16 @@ void SbplSplineMotionPrimitives::generatePrimitivesForAngle(const int startAngle
     if(config.generatePointTurnMotions)
     {
         //point turns are a special case
-        for(int angle = 0; angle < config.numAngles; ++ angle)
+        for(int endAngle : endAngles)
         {
-            if(angle == startAngle)
+            if(endAngle == startAngle)
                 continue;
             
             SplinePrimitive prim;
             prim.startAngle = startAngle;
-            prim.endAngle = angle;
+            prim.endAngle = endAngle;
             prim.startAngleRad = radStartAngle;
-            prim.endAngleRad = angle * radPerDiscreteAngle;
+            prim.endAngleRad = endAngle * radPerDiscreteAngle;
             prim.id = id;
             prim.motionType = SplinePrimitive::SPLINE_POINT_TURN;
             prim.endPosition << 0, 0;
