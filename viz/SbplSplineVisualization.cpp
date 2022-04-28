@@ -177,9 +177,3 @@ void SbplSplineVisualization::addPrimitives(osg::Group* group,
   }
 }
 
-
-
-
-//Macro that makes this plugin loadable in ruby, this is optional.
-//VizkitQtPlugin(MotionPlanningLibrariesSbplSplineVisualization)
-

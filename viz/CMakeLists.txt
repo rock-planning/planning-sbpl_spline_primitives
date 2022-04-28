@@ -1,3 +1,5 @@
+
+rock_find_qt5(Core)
 rock_vizkit_plugin(sbpl_spline_primitives-viz
     SbplSplineVisualization.cpp
     DEPS sbpl_spline_primitives
