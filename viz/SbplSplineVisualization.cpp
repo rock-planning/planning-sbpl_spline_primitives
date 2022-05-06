@@ -80,6 +80,11 @@ double SbplSplineVisualization::getMaxCurvature() const
     return maxCurvature;
 }
 
+double SbplSplineVisualization::getMaxCurveLength() const
+{
+    return maxCurveLength;
+}
+
 void SbplSplineVisualization::setMaxCurvature(const double value)
 {
     maxCurvature = value;
@@ -87,7 +92,12 @@ void SbplSplineVisualization::setMaxCurvature(const double value)
     emit propertyChanged("maxCurvature");
 }
 
-
+void SbplSplineVisualization::setMaxCurveLength(const double value)
+{
+    maxCurveLength = value;
+    setDirty();
+    emit propertyChanged("maxCurveLength");
+}
 
 osg::ref_ptr<osg::Node> SbplSplineVisualization::createMainNode()
 {
@@ -113,10 +123,20 @@ void SbplSplineVisualization::addPrimitives(osg::Group* group,
   const std::vector<SplinePrimitive>& prims = primitives.getPrimitiveForAngle(mAngleNum);
   for(const SplinePrimitive& prim : prims)
   {
-    if(prim.endAngle != mEndAngle)
-      continue;
+    //if(prim.endAngle != mEndAngle)
+    //  continue;
+
+    if (prim.motionType == sbpl_spline_primitives::SplinePrimitive::Type::SPLINE_POINT_TURN)
+    {
+        continue;
+    }
     
     if(const_cast<SplinePrimitive&>(prim).spline.getCurvatureMax() > maxCurvature)
+    {
+        continue;
+    }
+
+    if (const_cast<SplinePrimitive&>(prim).spline.getCurveLength() > maxCurveLength)
     {
         continue;
     }
@@ -181,5 +201,5 @@ void SbplSplineVisualization::addPrimitives(osg::Group* group,
 
 
 //Macro that makes this plugin loadable in ruby, this is optional.
-//VizkitQtPlugin(MotionPlanningLibrariesSbplSplineVisualization)
+//VizkitQtPlugin(SbplSplineVisualization)
 
