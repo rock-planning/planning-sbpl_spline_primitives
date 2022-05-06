@@ -18,6 +18,7 @@ namespace vizkit3d
     Q_PROPERTY(int angleNum READ getAngleNum WRITE setAngleNum)
     Q_PROPERTY(int endAngle READ getEndAngle WRITE setEndAngle)
     Q_PROPERTY(double maxCurvature READ getMaxCurvature WRITE setMaxCurvature)
+    Q_PROPERTY(double maxCurveLength READ getMaxCurveLength WRITE setMaxCurveLength)
     
     public:
         SbplSplineVisualization();
@@ -36,13 +37,16 @@ namespace vizkit3d
         bool allAnglesShown() const;
         void setShowAllAngles(bool enabled);
         double getMaxCurvature() const;
+        double getMaxCurveLength() const;
         void setMaxCurvature(const double value);
+        void setMaxCurveLength(const double value);
 
     protected:
         int mAngleNum;
         int mEndAngle;
         bool mAllAnglesShown;
         double maxCurvature = 10000;
+        double maxCurveLength = 10000;
         
         virtual osg::ref_ptr<osg::Node> createMainNode();
         virtual void updateMainNode(osg::Node* node);
