@@ -5,4 +5,6 @@ rock_vizkit_plugin(sbpl_spline_primitives-viz
     DEPS sbpl_spline_primitives
     MOC SbplSplineVisualization.hpp
     HEADERS SbplSplineVisualization.hpp)
+    
+add_subdirectory(gui)    
 

@@ -6,5 +6,3 @@ rock_library(sbpl_spline_primitives
             SplinePrimitivesConfig.hpp
     DEPS_PKGCONFIG 
             base-types)
-
-add_subdirectory(gui)            
