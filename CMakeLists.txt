@@ -5,6 +5,5 @@ project(sbpl_spline_primitives VERSION 0.1 DESCRIPTION "Library for generating m
 find_package(Rock)
 set(ROCK_TEST_ENABLED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-rock_find_qt4()
 rock_init()
 rock_standard_layout()
