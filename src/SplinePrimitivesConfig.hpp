@@ -26,7 +26,7 @@ struct SplinePrimitivesConfig
     bool generateLateralMotions;
     bool generatePointTurnMotions;
     
-    SplinePrimitivesConfig() : gridSize(0.1), numAngles(16), numEndAngles(7),
+    SplinePrimitivesConfig() : gridSize(0.3), numAngles(16), numEndAngles(7),
                                destinationCircleRadius(20), cellSkipFactor(0.3),
                                splineOrder(4), generateForwardMotions(true),
                                generateBackwardMotions(true), generateLateralMotions(true),
