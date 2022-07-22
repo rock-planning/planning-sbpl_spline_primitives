@@ -1,5 +1,6 @@
 #pragma once
 #include <QObject>
+#include <QtWidgets>
 
 #ifndef Q_MOC_RUN
 #include <vizkit3d/Vizkit3DWidget.hpp>
