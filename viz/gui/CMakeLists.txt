@@ -1,3 +1,5 @@
+find_package(Boost COMPONENTS system filesystem REQUIRED)
+
 rock_library(sbpl_viz_gui
     SOURCES
         SbplGui.cpp
@@ -13,3 +15,5 @@ rock_executable(sbpl_spline_viz_bin
     SOURCES
         main.cpp
     DEPS sbpl_viz_gui)
+
+target_link_libraries(sbpl_spline_viz_bin ${Boost_SYSTEM_LIBRARY} ${Boost_FILESYSTEM_LIBRARY})    
