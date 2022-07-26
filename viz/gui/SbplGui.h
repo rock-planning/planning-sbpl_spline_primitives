@@ -5,6 +5,7 @@
 #ifndef Q_MOC_RUN
 #include <vizkit3d/Vizkit3DWidget.hpp>
 #include <vizkit3d/SbplSplineVisualization.hpp>
+#include <vizkit3d/GridVisualization.hpp>
 #include <base/Eigen.hpp>
 #endif
 
@@ -58,6 +59,7 @@ private:
     QCheckBox* generateForwardMotionsCheckBox;
     QWidget window;
     vizkit3d::SbplSplineVisualization splineViz;
+    vizkit3d::GridVisualization gridViz;
     sbpl_spline_primitives::SplinePrimitivesConfig config;
 
     double minTurningRadius;

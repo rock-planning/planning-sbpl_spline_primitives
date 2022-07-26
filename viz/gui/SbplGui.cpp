@@ -17,8 +17,10 @@ void SbplGui::setupUI()
     widget = new vizkit3d::Vizkit3DWidget();
     widget->setCameraManipulator(vizkit3d::ORBIT_MANIPULATOR);
     widget->addPlugin(&splineViz);
+    widget->addPlugin(&gridViz);
 
     splineViz.setPluginEnabled(true);
+    gridViz.setPluginEnabled(true);
 
     QVBoxLayout* layout = new QVBoxLayout();    
        
