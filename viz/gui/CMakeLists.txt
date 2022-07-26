@@ -8,7 +8,7 @@ rock_library(sbpl_viz_gui
     MOC
         SbplGui.h
     DEPS sbpl_spline_primitives-viz
-    DEPS_PKGCONFIG vizkit3d base-viz base-types
+    DEPS_PKGCONFIG vizkit3d base-types vizkit3d-viz base-viz 
 )
 
 rock_executable(sbpl_spline_viz_bin
