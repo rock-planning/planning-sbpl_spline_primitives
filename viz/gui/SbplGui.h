@@ -3,8 +3,8 @@
 
 #ifndef Q_MOC_RUN
 #include <vizkit3d/Vizkit3DWidget.hpp>
-#include <vizkit3d/SbplSplineVisualization.hpp>
 #include <vizkit3d/GridVisualization.hpp>
+#include "SbplSplineVisualization.hpp"
 #include <base/Eigen.hpp>
 #endif
 
